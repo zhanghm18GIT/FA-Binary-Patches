@@ -70,9 +70,9 @@ These don't matter except for other assembly patches
 
 ## Bugs
 
-- Preserve texture-scroll precision by using full-float hardware instance data.
+- Fix aircraft never undocking from air staging platforms / carriers when stored health is above max health
 
-  - hooks/DisableFloat16VertexFormatter.hook
+  - hooks/RefuelUndockFix.hook
 
 - Remove lingering transport load factor calcuation at aircraft initialization
 
@@ -156,8 +156,16 @@ These don't matter except for other assembly patches
 
 - Fix a crash when units arrive at waypoints
   - hooks/WayPointArrive.cpp
+ 
+- Fix camera snapping behind terrain in freecam
+  - hooks/TrueFreeCam.cpp
+  - section/TrueFreeCam.cpp
 
 ## Improvements
+
+- Increase the fixed particle render-buffer pool from 400 to 4096 entries and the segment-buffer pool from 100 to 400 entries.
+
+  - hooks/ParticlePoolCapacity.hook
 
 - Allows to use 4GB on x64
 
