@@ -70,6 +70,10 @@ These don't matter except for other assembly patches
 
 ## Bugs
 
+- Fix aircraft never undocking from air staging platforms / carriers when stored health is above max health
+
+  - hooks/RefuelUndockFix.hook
+
 - Remove lingering transport load factor calcuation at aircraft initialization
 
   - hooks/RemoveTransportLoadFactor.cpp
@@ -152,10 +156,18 @@ These don't matter except for other assembly patches
 
 - Fix a crash when units arrive at waypoints
   - hooks/WayPointArrive.cpp
+ 
+- Fix camera snapping behind terrain in freecam
+  - hooks/TrueFreeCam.cpp
+  - section/TrueFreeCam.cpp
 
 ## Improvements
 
-- Complete HEAPMNG page-map coverage and enable free-region coalescing across the 3-4 GiB range on x64.
+- Increase the fixed particle render-buffer pool from 400 to 4096 entries and the segment-buffer pool from 100 to 400 entries.
+
+  - hooks/ParticlePoolCapacity.hook
+
+- Allows to use 4GB on x64
 
   - hooks/HFix4GB.cpp
 
