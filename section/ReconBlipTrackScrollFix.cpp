@@ -17,7 +17,7 @@
 // The destination fields are the corresponding scroll values in the
 // Entity snapshot built for the ReconBlip.
 
-extern "C" void ReconBlipTrackScrollFix()
+extern "C" __attribute__((naked)) void ReconBlipTrackScrollFix()
 {
     asm(
         // Replay the six-byte instruction replaced by the hook.
